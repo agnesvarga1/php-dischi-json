@@ -2,9 +2,19 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      msg: "Hello World!",
+      discs: [],
+      url: "server.php",
     };
   },
-
-  methods: {},
+  mounted() {
+    this.getDiscs();
+  },
+  methods: {
+    getDiscs() {
+      axios.get(this.url).then((res) => {
+        console.log(res.data);
+        this.discs = res.data;
+      });
+    },
+  },
 }).mount("#app");
