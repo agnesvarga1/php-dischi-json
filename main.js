@@ -4,6 +4,7 @@ createApp({
     return {
       discs: [],
       url: "server.php",
+      active: false,
     };
   },
   mounted() {
@@ -15,6 +16,9 @@ createApp({
         console.log(res.data);
         this.discs = res.data;
       });
+    },
+    getSingleDisc() {
+      this.active = true;
     },
   },
 }).mount("#app");

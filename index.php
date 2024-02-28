@@ -11,9 +11,12 @@
  <div id="app">
 
   <h1>Discs</h1>
-  <div class="container ">
+  <div class="container position-relative ">
+    <div class=" mx-auto bg-light h-100 w-100 position-absolute z-2   opacity-75 justify-content-center align-items-center" :class="!active ? 'd-none' : 'd-flex' " >
+      <h1 class="opacity-100">My modal</h1>
+    </div>
     <div class="row d-flex justify-content-center ">
-    <div v-for="(disc , i) in discs" :key="i" class="card  col-3 m-1" >
+    <div @click="getSingleDisc" v-for="(disc , i) in discs" :key="i" class="card  col-3 m-1" >
   <img :src="disc.poster" class="card-img-top w-75 mx-auto pt-2" alt="...">
   <div class="card-body">
   <h5>{{disc.title}} , {{disc.year}}</h5>
