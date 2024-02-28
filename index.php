@@ -11,9 +11,15 @@
  <div id="app">
 
   <h1>Discs</h1>
-  <div class="container">
-    <div class="row">
-        
+  <div class="container ">
+    <div class="row d-flex justify-content-center ">
+    <div v-for="(disc , i) in discs" :key="i" class="card  col-3 m-1" >
+  <img :src="disc.poster" class="card-img-top w-75 mx-auto pt-2" alt="...">
+  <div class="card-body">
+  <h5>{{disc.title}} , {{disc.year}}</h5>
+  <h6>{{disc.author}}</h6>
+  </div>
+</div>
     </div>
   </div>
  </div>
